@@ -1,5 +1,7 @@
 # -*- encoding:utf-8 -*-
 
+import json
+
 # for i in range(5):
 #     for j in range(3):
 #         print(i, j)
@@ -31,11 +33,15 @@ test1("print")
 test2("return")
 '''
 
-#tuple元组详解：
 
-#当创建的元组只有一个元素时，元组后面必加一个逗号
-tuple_demo1 = ("中文",)
-print(type(tuple_demo1))
-#不加逗号，将其误认为字符串
-tuple_demo2 = ("中文")
-print(type(tuple_demo2))
+#解决列表无法正常输出中文：
+list_word = ["动物", "植物", "人", "环境"]
+print("无法正常显示：%s" % list_word)
+
+#1.
+mean1 = str(list_word).decode('string_escape')
+print("方法1：%s" % mean1)
+
+#2.通过改成json格式
+mean2 = json.dumps(list_word, encoding='UTF-8', ensure_ascii=False)
+print(mean2)
