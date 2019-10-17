@@ -9,11 +9,12 @@
 def loopnest():
     for i in range(5):
         j = 0
-        while j <= 3:
+        while j < 3:
             print ("i的值：%s；j的值：%s" % (i,j))
-            break
-        print("内循环结束")
-#            j += 1
+            j += 1
+#            break
+        print("第%s内循环结束" % i)
+
 #loopnest()
 
 #break的用法：
@@ -27,10 +28,17 @@ def break_usage():
 
 
 #continue的用法：
-#筛选出奇数
+#筛选出奇数并计数
 def continue_usage():
-    for i in range(10):
+    list = []
+    tar_figure = int(raw_input("输入数字范围："))
+    for i in range(tar_figure):
         if i % 2 == 0:
             continue
-        print("奇数有：%s" % i)
-continue_usage()
+        else:
+            list.append(i)
+
+    count = len(list)
+    return "奇数的个数：%s\n奇数有：%s" % (count, list)
+#result = continue_usage()
+#print(result)
