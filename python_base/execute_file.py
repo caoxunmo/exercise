@@ -2,7 +2,6 @@
 
 import os
 
-'''
 # 打开一个文件
 fo = open(r"D:\python_workspace\exercise\crc32_verify\fool.text", "r+")
 
@@ -30,13 +29,15 @@ print("之后的位置：%s" % fo.tell())
 # 关闭打开的文件
 # fo.close()
 print ("文件状态：%s" % fo.closed)
-'''
+
 
 
 '''
 with的用法
 with.....as语句是简化版的try except finally语句
 会自动关闭文件，处理上下文环境的异常
+'''
+
 '''
 with open("with.text", "r") as f:
     for row in f:
@@ -61,6 +62,7 @@ def get_instance():
 
 with get_instance() as demo:
     print ("demo:%s" % demo)
+'''
 
 
 # fo.write("this is good\n good time\n")
